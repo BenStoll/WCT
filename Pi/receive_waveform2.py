@@ -1,5 +1,5 @@
 from bluepy.btle import Peripheral, DefaultDelegate
-import matplotlib.pylot as plt
+import matplotlib.pyplot as plt
 import time
 
 class MyDelegate(DefaultDelegate):
