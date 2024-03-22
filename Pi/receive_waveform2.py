@@ -1,4 +1,4 @@
-from bluepy.btle import Peripher, DefaultDelegate
+from bluepy.btle import Peripheral, DefaultDelegate
 import matplotlib.pylot as plt
 import time
 
