@@ -2,6 +2,7 @@
 
 BLEService sensorService("50e967b4-2065-4356-8a56-c839b3c32117");
 BLEIntCharacteristic analogCharacteristic("2A37", BLERead | BLENotify);
+//int testValue = 1;
 
 void setup() {
   Serial.begin(9600);
@@ -30,10 +31,13 @@ void loop() {
   if (central) {
     Serial.print("Connected to central: ");
     Serial.println(central.address());
+    
     while (central.connected()) {
       int sensorValue = analogRead(A0);
+      //testValue++;
       analogCharacteristic.writeValue(sensorValue);
-      delay(200);
+     //analogCharacteristic.writeValue(testValue);
+      delay(100);
     }
     Serial.print("Disconnected from central: ");
     Serial.println(central.address());
