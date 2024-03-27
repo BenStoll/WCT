@@ -47,10 +47,10 @@ while True:
   if time.time() - start_time > 10:
     break
   if p.waitForNotifications(1.0):
+    plt.plot(readings)
+    plt.pause(0.001)
     continue
   print ("Waiting...")
 
 p.disconnect()
-
-plt.plot(readings)
 plt.show()
