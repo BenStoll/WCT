@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import time
 
 readings = []
-for i in range(20):
+for i in range(50):
   readings.append(0)
 
 class MyDelegate(btle.DefaultDelegate):
