@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 import time
 
 readings = []
+for i in range(20):
+  readings.append(0)
 
 class MyDelegate(btle.DefaultDelegate):
   def __init__(self):
@@ -18,8 +20,10 @@ class MyDelegate(btle.DefaultDelegate):
     self.data = []
 
   def handleNotification(self, cHandle, data):
+    global readings
     print(data)
     print(data[0])
+    readings = readings[1:]
     readings.append(data[0])
 
 address = "0C:CF:6F:54:6C:60"
@@ -47,6 +51,7 @@ while True:
   if time.time() - start_time > 10:
     break
   if p.waitForNotifications(1.0):
+    plt.cla()
     plt.plot(readings)
     plt.pause(0.001)
     continue
