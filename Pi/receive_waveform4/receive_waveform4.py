@@ -1,6 +1,4 @@
-from bluepy import ble
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
+from bluepy import btle
 import pandas as pd
 import time
 import csv
@@ -9,8 +7,6 @@ file_name = 'heartData.csv'
 field_names = ['iteration', 'reading']
 
 iteration = 0
-
-readings = []
 
 with open(file_name, 'w') as data_file:
   csv_writer = csv.DictWriter(data_file, fieldnames=field_names)
@@ -50,7 +46,7 @@ ch = svc.getCharacteristics(char_uuid)[0]
 
 setup_data = b"/x01|x00"
 p.writeCharacteristic(ch.valHandle + 1)
-print(type(ch_data))
+print(type(ch_data))  # Double check what this line and next do
 print(ch_data)
 
 start_time = time.time()
@@ -63,6 +59,3 @@ while True:
   print("Waiting...")
 
 p.disconnect()
-
-plt.plot(readings)
-plt.show()
