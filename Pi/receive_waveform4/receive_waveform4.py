@@ -1,4 +1,5 @@
 from bluepy import btle
+import matplotlib.pyplot as plt
 import pandas as pd
 import time
 import csv
@@ -34,7 +35,7 @@ class MyDelegate(btle.DefaultDelegate):
       print(iteration,data[0])
 
 address = "44:1D:62:69:DC:E4"
-#0C:CF:6F:54:6C:60
+#address = "0C:CF:6F:54:6C:60"
 service_uuid = "50e967b4-2065-4356-8a56-c839b3c32117"
 char_uuid = "2A37"
 
