@@ -46,7 +46,7 @@ svc = p.getServiceByUUID(service_uuid)
 ch = svc.getCharacteristics(char_uuid)[0]
 
 setup_data = b"/x01|x00"
-p.writeCharacteristic(ch.valHandle + 1)
+p.writeCharacteristic(ch.valHandle + 1, setup_data)
 print(type(ch_data))  # Double check what this line and next do
 print(ch_data)
 
