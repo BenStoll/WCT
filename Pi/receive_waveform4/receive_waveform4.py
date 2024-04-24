@@ -47,7 +47,7 @@ ch = svc.getCharacteristics(char_uuid)[0]
 
 setup_data = b"/x01|x00"
 p.writeCharacteristic(ch.valHandle + 1, setup_data)
-print(type(ch_data))  # Double check what this line and next do
+print(type(ch_data))
 print(ch_data)
 
 start_time = time.time()
