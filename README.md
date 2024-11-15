@@ -1,4 +1,4 @@
-# WCT
+# Wireless Cardiac Telemetry (WCT)
 ### CoraZone
 ##### TelemeTeam: Brandon Joel, Benjamin Stoll, Carly Tronolone, Nicholas Piotrowski
 This repository is for the Senior Design Project (Capstone Project).
